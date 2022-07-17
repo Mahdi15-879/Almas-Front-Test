@@ -1,0 +1,11 @@
+.Box {
+  width: 10rem;
+  height: 7rem;
+  background-color: azure;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10000;
+  position: absolute;
+  top: 0;
+}
