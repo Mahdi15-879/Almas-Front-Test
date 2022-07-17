@@ -43,7 +43,7 @@ const Navbar = () => {
         </div>
 
         <div className="Navbar__col-2">
-          <form>
+          <form onSubmit={(e) => e.preventDefault()}>
             <input placeholder="چه خدمتی از ما ساخته است؟" />
             <button type="submit">
               <figure>
