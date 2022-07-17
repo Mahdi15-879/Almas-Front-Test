@@ -1,30 +1,38 @@
-import React from "react";
-import { GoogleMap, withScriptjs, withGoogleMap } from "react-google-maps";
+import React, { useState } from "react";
+import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
 
 // Styles
 import "./Home.css";
 
-// Functions
-function Map() {
-  return (
-    <GoogleMap
-      defaultZoom={15}
-      defaultCenter={{ lat: 32.654629, lng: 51.667984 }}
-    />
-  );
-}
+// SVG
+// import Duotone_1 from "../assets/Duotone-1.svg";
+// import Duotone_2 from "../assets/Duotone-2.svg";
 
-const WrrapedMap = withScriptjs(withGoogleMap(Map));
+// Locations
+import { locsData } from "../data/locsData";
+
+const position = [32.654629, 51.667984];
 
 const Home = () => {
+  const [isChoose, setIsChoose] = useState(false);
+
   return (
     <div className="Home">
-      <WrrapedMap
-        googleMapURL={`https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=geometry,drawing,places&key=AIzaSyCKuhxABU_EfchLjAHz06FlO2W-2Bjv4xA`}
-        loadingElement={<div style={{ height: "100%", width: "100%" }} />}
-        containerElement={<div style={{ height: "100%" }} />}
-        mapElement={<div style={{ height: "100%" }} />}
-      />
+      <MapContainer center={position} zoom={13} scrollWheelZoom={true}>
+        <TileLayer
+          attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+          url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+        />
+
+        {locsData.features.map((loc) => (
+          <Marker
+            key={loc.properties.PARK_ID}
+            position={loc.geometry.coordinates}
+          >
+            <Popup>Salam</Popup>
+          </Marker>
+        ))}
+      </MapContainer>
     </div>
   );
 };
