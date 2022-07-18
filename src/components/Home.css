@@ -1,9 +1,52 @@
 .Home {
   width: 100%;
   height: 88vh;
+  position: relative;
+  z-index: 100;
+  overflow: hidden;
 }
 
 .leaflet-container {
   width: 100%;
   height: 100%;
+}
+
+.Box-container {
+  /* width: 100%; */
+  height: 12rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  bottom: 0;
+  z-index: 1000;
+  /* overflow: hidden; */
+  margin-bottom: 1rem;
+  transition: 0.7s;
+  overflow-x: auto;
+}
+
+.Box {
+  background-color: aquamarine;
+  margin: 0 0.5rem;
+  width: 20rem;
+  position: relative;
+  transition: 0.5s;
+  left: 0;
+}
+
+.arrow-left {
+  position: absolute;
+  left: 0rem;
+  bottom: 13rem;
+  z-index: 2000;
+  cursor: pointer;
+}
+
+.arrow-right {
+  position: absolute;
+  right: 0;
+  bottom: 13rem;
+  z-index: 2000;
+  cursor: pointer;
 }
