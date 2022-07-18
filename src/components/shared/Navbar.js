@@ -42,24 +42,26 @@ const Navbar = () => {
           </span>
         </div>
 
-        <div className="Navbar__col-2">
-          <form onSubmit={(e) => e.preventDefault()}>
-            <input placeholder="چه خدمتی از ما ساخته است؟" />
-            <button type="submit">
-              <figure>
-                <img src={magnifier} alt="Magnifier" />
+        <div className="Navbar__col-2-cnr">
+          <div className="Navbar__col-2">
+            <form onSubmit={(e) => e.preventDefault()}>
+              <input placeholder="چه خدمتی از ما ساخته است؟" />
+              <button type="submit">
+                <figure>
+                  <img src={magnifier} alt="Magnifier" />
+                </figure>
+              </button>
+              <figure className="Line">
+                <img src={line} alt="Line" />
               </figure>
-            </button>
-            <figure>
-              <img src={line} alt="Line" />
-            </figure>
-          </form>
-        </div>
+            </form>
+          </div>
 
-        <div className="Navbar__col-3">
-          <figure>
-            <img src={logo} alt="Logo" />
-          </figure>
+          <div className="Navbar__col-3">
+            <figure>
+              <img src={logo} alt="Logo" />
+            </figure>
+          </div>
         </div>
       </nav>
     </div>
