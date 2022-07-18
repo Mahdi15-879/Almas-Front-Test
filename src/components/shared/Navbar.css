@@ -120,11 +120,6 @@
     flex-direction: column-reverse;
   }
 
-  .Navbar__col-1 {
-    width: 80%;
-    margin: auto;
-  }
-
   .Navbar__col-2-cnr {
     width: 100%;
   }
